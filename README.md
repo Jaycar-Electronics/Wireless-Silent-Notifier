@@ -46,7 +46,7 @@ The receiver module is easy enough to install, one side has `VCC`, 2x`GND`, and 
 Connect `VCC` and `GND` to where they've got to go (on both sides), then `DATA` to `pin13` on the Arduino, and connect a 17mm wire to `ANT`
 
 | Arduino | Receiver ZW3102  | Transistor | Description |
-| ---  | --- | --- |
+| ---  | --- | --- |--- | 
 | 5V | VCC | | Power supply |
 | GND | GND | Collector | Ground connections |
 | 13 | DATA | | Data from wireless receiver to the Arduino |
