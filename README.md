@@ -6,7 +6,7 @@ _Sight and Sound_
 
 #### Base Station
 | Qty | Code | Description
-| :------------- | :------------- |
+| :------------- | :------------- | --- | 
 |1 | [MP3058](http://jaycar.com.au/p/MP3058) | 12V power supply
 |1 | [XC4430](http://jaycar.com.au/p/XC4430) | Leonardo main board
 |1 | [ZW3102](http://jaycar.com.au/p/ZW3102) | 433Mhz receiver
@@ -19,7 +19,7 @@ _Sight and Sound_
 _Use any style of transmitter you want, this is just an example_
 
 | Qty | Code | Description
-| :------------- | :------------- |
+| :------------- | :------------- |--- | 
 |1 | [ZW3100](http://jaycar.com.au/p/ZW3100) | 433Mhz Transmitter
 |1 | [PH9280](http://jaycar.com.au/p/PH9280) | 2AA switched battery compartment
 |1 | [XC4438](http://jaycar.com.au/p/XC4438) | Sound sensor module
