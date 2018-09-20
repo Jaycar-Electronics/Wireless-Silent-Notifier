@@ -1,28 +1,30 @@
 # Wireless Silent Notifier
 _Sight and Sound_
 
+This is a perfect project for new mums and dads or anyone that
+needs to be alerted without making a sound. Included is a simple base station that picks up wireless signals, a sensor (in this case a sound level sensor) and a strobe light. As soon as the baby cries the strobe light will go off alerting you. Whilst 1 detector is included in this project you can use any number of different types, depending on what you want to measure and be alerted for (temperature, moisture, door entry, ph levels etc.).
 
 ## Bill of Materials
 
 #### Base Station
 | Qty | Code | Description
-| :------------- | :------------- | --- | 
-|1 | [MP3058](http://jaycar.com.au/p/MP3058) | 12V power supply
-|1 | [XC4430](http://jaycar.com.au/p/XC4430) | Leonardo main board
-|1 | [ZW3102](http://jaycar.com.au/p/ZW3102) | 433Mhz receiver
-|1 | [LA5328](http://jaycar.com.au/p/LA5328) | LED Strobe Light
-|1 | [ZT2116](http://jaycar.com.au/p/ZT2116) | BC338 NPN Transistor
-| | | a small resistor and some wire to act as antenna |
+| :------------- | :------------- | --- |
+|1 | [MP3058](http://jaycar.com.au/p/MP3058) | 12V power supply |
+|1 | [XC4430](http://jaycar.com.au/p/XC4430) | Leonardo main board |
+|1 | [ZW3102](http://jaycar.com.au/p/ZW3102) | 433Mhz receiver |
+|1 | [LA5328](http://jaycar.com.au/p/LA5328) | LED Strobe Light |
+|1 | [ZT2116](http://jaycar.com.au/p/ZT2116) | BC338 NPN Transistor |
+| | | A small resistor and some wire to act as antenna |
 
 
 #### Transmitter
 _Use any style of transmitter you want, this is just an example_
 
 | Qty | Code | Description
-| :------------- | :------------- |--- | 
-|1 | [ZW3100](http://jaycar.com.au/p/ZW3100) | 433Mhz Transmitter
-|1 | [PH9280](http://jaycar.com.au/p/PH9280) | 2AA switched battery compartment
-|1 | [XC4438](http://jaycar.com.au/p/XC4438) | Sound sensor module
+| :------------- | :------------- | --- |
+|1 | [ZW3100](http://jaycar.com.au/p/ZW3100) | 433Mhz Transmitter |
+|1 | [PH9280](http://jaycar.com.au/p/PH9280) | 2AA switched battery compartment |
+|1 | [XC4438](http://jaycar.com.au/p/XC4438) | Sound sensor module |
 | | | Some spare wire to act as antenna |
 
 
@@ -39,14 +41,14 @@ We connect Pin 8 to drive the circuit; when pin 8 is high, current is applied to
 
 We've used a 1k resistor but you've got playing room for different values depending on how much current you want to drive through the transistor.
 
-use the falstad app to play around with different set-ups and see if your resistors work and how much current they provide. [Here's a link to the falstad  applet ](https://www.falstad.com/circuit/circuitjs.html?cct=$+1+0.000005+10.20027730826997+50+5+43%0At+352+192+288+192+1+1+0.6336865455998801+0.352593191562486+100%0Ag+288+208+288+240+0%0Ar+352+192+416+192+0+1000%0AR+448+176+496+176+0+0+40+5+0+0+0.5%0AR+288+80+288+64+0+0+40+12+0+0+0.5%0AS+416+192+448+192+0+0+false+0+2%0Ag+448+208+448+224+0%0A162+288+80+288+176+1+12+1+0+0+0.01%0A)
+Use the falstad app to play around with different set-ups and see if your resistors work and how much current they provide. [Here's a link to the falstad  applet ](https://www.falstad.com/circuit/circuitjs.html?cct=$+1+0.000005+10.20027730826997+50+5+43%0At+352+192+288+192+1+1+0.6336865455998801+0.352593191562486+100%0Ag+288+208+288+240+0%0Ar+352+192+416+192+0+1000%0AR+448+176+496+176+0+0+40+5+0+0+0.5%0AR+288+80+288+64+0+0+40+12+0+0+0.5%0AS+416+192+448+192+0+0+false+0+2%0Ag+448+208+448+224+0%0A162+288+80+288+176+1+12+1+0+0+0.01%0A)
 
 The receiver module is easy enough to install, one side has `VCC`, 2x`GND`, and `ANT` (for antenna) and the other side has `VCC`,`GND`, and 2x `DATA`
 
 Connect `VCC` and `GND` to where they've got to go (on both sides), then `DATA` to `pin13` on the Arduino, and connect a 17mm wire to `ANT`
 
 | Arduino | Receiver ZW3102  | Transistor | Description |
-| ---  | --- | --- |--- | 
+| ---  | --- | --- | --- |
 | 5V | VCC | | Power supply |
 | GND | GND | Collector | Ground connections |
 | 13 | DATA | | Data from wireless receiver to the Arduino |
@@ -93,7 +95,7 @@ with the antenna on `ANT`. You can probably do much better design than what we h
 
 This is a very simple project and only requires a few lines of code. Dig into the code and have a read of the comments to make sure you understand what is going on.
 
-one of the main points about the code is figuring out what signal is from our sensor. In our unit, we are simply checking for over 200 points of the same data signal, which signifies that there's something transmitting that continuous stream of either 0's or 1's.
+One of the main points about the code is figuring out what signal is from our sensor. In our unit, we are simply checking for over 200 points of the same data signal, which signifies that there's something transmitting that continuous stream of either 0's or 1's.
 
 While the transmitter is off, our receiver picks up something similar to this:
 
